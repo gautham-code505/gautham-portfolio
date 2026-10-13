@@ -18,9 +18,9 @@ export function Hero() {
               <img
                 src={photo.src}
                 alt={photo.alt}
-                width={88}
-                height={88}
-                className="size-[88px] shrink-0 rounded-2xl border border-border-strong object-cover"
+                width={104}
+                height={104}
+                className="size-[104px] shrink-0 rounded-2xl border border-border-strong object-cover"
               />
             )}
             <p className="label text-accent">{site.role}</p>
