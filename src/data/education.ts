@@ -2,7 +2,7 @@ import type { Certification, EducationEntry } from "../types/portfolio";
 
 export const education: EducationEntry[] = [
   {
-    institution: "Sri Eshwar Engineering College, Coimbatore",
+    institution: "Sri Eshwar College of Engineering, Coimbatore",
     qualification: "B.E. Computer Science and Engineering (AI & ML)",
     period: "2025 – 2029",
     score: "CGPA 8.38 (up to Semester II)",
@@ -26,4 +26,5 @@ export const certifications: Certification[] = [
   { title: "Machine Learning", issuer: "Great Learning", year: 2025 },
   { title: "Python for AI", issuer: "Infosys Springboard", year: 2025 },
   { title: "Data Structures & Algorithms", issuer: "Udemy", year: 2025 },
+  { title: "Data Structure – C – Course (Hands-On)", issuer: "SkillRack", year: 2026 },
 ];

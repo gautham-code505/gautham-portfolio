@@ -104,6 +104,8 @@ export interface SiteConfig {
   /** Public path. The download button renders only if this file exists at build time. */
   resumePath: string;
   availability: string;
+  /** Coding-profile figures. Only shown with a verifiedOn date; update from the live profiles. */
+  codingStats: { verifiedOn: string; leetcode: string; skillrack: string };
   about: string[];
   seo: { title: string; description: string };
 }

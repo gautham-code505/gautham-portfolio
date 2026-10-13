@@ -49,7 +49,7 @@ The schema is in `src/types/portfolio.ts`.
 
 ## Resume
 
-Put the PDF at `public/resume/Gautham_MA_ATS_Resume.pdf`, then rebuild (restart `npm run dev` too).
+Put the PDF at `public/resume/Gautham_MA_Resume.pdf`, then rebuild (restart `npm run dev` too).
 The download buttons render only when that file exists at build time. To change the filename, edit `resumePath` in `src/data/site.ts`.
 
 ## Before launch

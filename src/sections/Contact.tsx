@@ -18,8 +18,8 @@ export function Contact() {
         <ul>
           <li className={row}><span className="text-muted">Email</span><a className="break-all hover:text-accent" href={`mailto:${site.email}`}>{site.email}</a></li>
           <li className={row}><span className="text-muted">Phone</span><a className="hover:text-accent" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></li>
-          <li className={row}><span className="text-muted">LeetCode</span><a className="hover:text-accent" href={site.links.leetcode} target="_blank" rel="noopener noreferrer">GauthamMA<span className="sr-only"> (opens in a new tab)</span></a></li>
-          <li className={row}><span className="text-muted">SkillRack</span><a className="hover:text-accent" href={site.links.skillrack} target="_blank" rel="noopener noreferrer">Profile<span className="sr-only"> (opens in a new tab)</span></a></li>
+          <li className={row}><span className="text-muted">LeetCode</span><a className="hover:text-accent" href={site.links.leetcode} target="_blank" rel="noopener noreferrer">{site.codingStats.leetcode}<span className="sr-only"> — LeetCode profile (opens in a new tab)</span></a></li>
+          <li className={row}><span className="text-muted">SkillRack</span><a className="hover:text-accent" href={site.links.skillrack} target="_blank" rel="noopener noreferrer">{site.codingStats.skillrack}<span className="sr-only"> — SkillRack profile (opens in a new tab)</span></a></li>
           <li className={row}><span className="text-muted">Based in</span><span>{site.location}</span></li>
         </ul>
       </div>
