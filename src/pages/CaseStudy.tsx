@@ -27,7 +27,7 @@ export function CaseStudy() {
 
       <header className="mt-4 grid gap-10 border-b border-border pb-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
         <div className="min-w-0">
-          <StatusBadge status={p.status} />
+          <StatusBadge status={p.status} note={p.statusNote} />
           <h1 className="mt-4 text-4xl sm:text-5xl">{p.title}</h1>
           {p.subtitle && <p className="mt-3 text-lg text-muted">{p.subtitle}</p>}
           <p className="mt-6 text-[1.05rem]">{p.summary}</p>

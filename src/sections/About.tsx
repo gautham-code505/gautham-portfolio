@@ -10,9 +10,10 @@ export function About() {
         </div>
         <aside aria-label="At a glance" className="rounded-card border border-border bg-surface p-5 text-sm">
           <dl className="grid gap-4">
-            <div><dt className="label text-muted">Studying</dt><dd className="mt-1">{site.education}</dd></div>
-            <div><dt className="label text-muted">Focus</dt><dd className="mt-1">Applied AI · optimization · Python backends</dd></div>
-            <div><dt className="label text-muted">Looking for</dt><dd className="mt-1">{site.availability}</dd></div>
+            <div><dt className="label text-muted">Studying</dt><dd className="mt-1">B.E. CSE (AI & ML) · Sri Eshwar College of Engineering, Coimbatore · 2025 – 2029</dd></div>
+            <div><dt className="label text-muted">CGPA</dt><dd className="mt-1">8.38 <span className="text-muted">(after Semester II)</span></dd></div>
+            <div><dt className="label text-muted">Focus</dt><dd className="mt-1">{site.focus.join(" · ")}</dd></div>
+            <div><dt className="label text-muted">Responsibility</dt><dd className="mt-1">Placement Coordinator, Sri Eshwar College of Engineering</dd></div>
           </dl>
         </aside>
       </div>

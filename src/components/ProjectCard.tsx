@@ -14,7 +14,7 @@ export function ProjectCard({ project: p, index }: { project: Project; index: nu
     >
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-3">
         <span className="label text-muted">Project {String(index + 1).padStart(2, "0")}</span>
-        <StatusBadge status={p.status} />
+        <StatusBadge status={p.status} note={p.statusNote} />
       </header>
 
       <div className="flex flex-1 flex-col px-5 py-5">

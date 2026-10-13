@@ -16,11 +16,11 @@ const dots: Record<ProjectStatus, string> = {
   "Academic Concept": "border border-muted",
 };
 
-export function StatusBadge({ status }: { status: ProjectStatus }) {
+export function StatusBadge({ status, note }: { status: ProjectStatus; note?: string }) {
   return (
     <span className={`label inline-flex items-center gap-2 rounded-full border px-2.5 py-1 normal-case tracking-normal ${styles[status]}`}>
       <span className={`size-1.5 rounded-full ${dots[status]}`} aria-hidden="true" />
-      {status}
+      {status}{note && <span className="opacity-80"> · {note}</span>}
     </span>
   );
 }

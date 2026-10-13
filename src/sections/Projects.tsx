@@ -9,7 +9,7 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      index="02"
+      index="03"
       eyebrow="Projects"
       title="What I've built — and what's still planned"
       intro="Each project shows its real status. Built features are backed by code or tests in the linked repository; planned work is labelled as planned."

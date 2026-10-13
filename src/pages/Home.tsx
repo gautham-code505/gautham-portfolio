@@ -1,9 +1,9 @@
 import { Hero } from "../sections/Hero";
 import { About } from "../sections/About";
+import { JourneySection } from "../sections/JourneySection";
 import { Projects } from "../sections/Projects";
-import { Skills } from "../sections/Skills";
 import { Achievements } from "../sections/Achievements";
-import { Education } from "../sections/Education";
+import { Skills } from "../sections/Skills";
 import { Contact } from "../sections/Contact";
 
 export function Home() {
@@ -11,10 +11,10 @@ export function Home() {
     <>
       <Hero />
       <About />
+      <JourneySection />
       <Projects />
-      <Skills />
       <Achievements />
-      <Education />
+      <Skills />
       <Contact />
     </>
   );

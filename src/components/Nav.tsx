@@ -5,9 +5,10 @@ import { Close, Menu } from "./Icons";
 
 const links = [
   { id: "about", label: "About" },
+  { id: "journey", label: "Journey" },
   { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
   { id: "achievements", label: "Achievements" },
+  { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];
 

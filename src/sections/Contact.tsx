@@ -7,7 +7,7 @@ import { GitHub, LinkedIn, Mail } from "../components/Icons";
 export function Contact() {
   const row = "flex min-h-11 items-center justify-between gap-4 border-b border-border py-2 text-sm";
   return (
-    <Section id="contact" index="06" eyebrow="Contact" title="Let's talk about an internship" intro={site.availability}>
+    <Section id="contact" index="06" eyebrow="Contact" title="Get in touch" intro="For collaborations, projects or opportunities, email is the fastest way to reach me.">
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="flex flex-wrap content-start items-start gap-3">
           <ButtonLink href={`mailto:${site.email}`} variant="primary"><Mail /> Email me</ButtonLink>

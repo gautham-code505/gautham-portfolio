@@ -1,0 +1,126 @@
+import type { JourneyEntry } from "../types/portfolio";
+
+/**
+ * Chronological journey. Verified facts only.
+ * Project months come from when each public repository was created on GitHub.
+ * Leave out anything without a confirmed date or result.
+ */
+export const journey: JourneyEntry[] = [
+  {
+    when: "2022 – 2023",
+    sort: "2023-03",
+    kind: "education",
+    title: "Secondary school (SSLC) — 89.5%",
+    detail: "Sri Sai Matriculation Higher Secondary School.",
+  },
+  {
+    when: "2024 – 2025",
+    sort: "2025-03",
+    kind: "education",
+    title: "Higher secondary (HSC) — 92.8%",
+    detail: "Sri Sai Matriculation Higher Secondary School.",
+  },
+  {
+    when: "2025",
+    sort: "2025-07",
+    kind: "education",
+    title: "Joined Sri Eshwar College of Engineering",
+    detail: "B.E. Computer Science and Engineering, specialising in Artificial Intelligence and Machine Learning. Batch 2025 – 2029.",
+    highlight: true,
+  },
+  {
+    when: "2025",
+    sort: "2025-12",
+    kind: "certification",
+    title: "Foundations in Python, ML and DSA",
+    detail: "Python Programming and Machine Learning (Great Learning), Python for AI (Infosys Springboard), Data Structures & Algorithms (Udemy).",
+  },
+  {
+    when: "Apr 2026",
+    sort: "2026-04",
+    kind: "project",
+    title: "First-year project: LARA — AI Fashion Advisor",
+    detail: "First-year mini project with Team Sparks: a Flask stylist with a rule-based outfit recommender and Gemini explanations. Presented at LUNARA'26.",
+    project: "lara-fashion-advisor",
+  },
+  {
+    when: "2026",
+    sort: "2026-04",
+    kind: "achievement",
+    title: "4th place — Lunara inter-college innovation event",
+    detail: "Conducted by Bannari Amman Institute of Technology.",
+  },
+  {
+    when: "Apr 2026",
+    sort: "2026-04",
+    kind: "certification",
+    title: "SkillRack — Data Structure in C (Hands-On)",
+    detail: "Certificate earned alongside regular practice on SkillRack, now past 830 solved programs.",
+  },
+  {
+    when: "Jun 2026",
+    sort: "2026-06",
+    kind: "project",
+    title: "SignalBridge AI — accessibility with computer vision",
+    detail: "Webcam gesture recognition, speech-to-text and a FastAPI backend for Deaf and hard-of-hearing users.",
+    project: "signalbridge-ai",
+  },
+  {
+    when: "Aug 2026",
+    sort: "2026-08",
+    kind: "project",
+    title: "AegisFlow AI — led the team, built the backend core",
+    detail: "Offline-first adaptive traffic management. FastAPI orchestration, decision-engine adapter, REST and WebSocket interfaces; decision-engine suite of 39 passing tests.",
+    project: "aegisflow-ai",
+    highlight: true,
+  },
+  {
+    when: "2026",
+    sort: "2026-08",
+    kind: "achievement",
+    title: "Finalist — SmartAIthon 2026",
+    detail: "Reached the finals with AegisFlow AI.",
+    project: "aegisflow-ai",
+    highlight: true,
+  },
+  {
+    when: "Aug 2026",
+    sort: "2026-08",
+    kind: "project",
+    title: "FIOS — forest emergency decision support",
+    detail: "Monorepo for an officer dashboard, API, explainable decision module and field app.",
+    project: "fios",
+  },
+  {
+    when: "Aug – Sep 2026",
+    sort: "2026-09",
+    kind: "project",
+    title: "Adaptive Procurement Coordination API",
+    detail: "Congestion forecasting and a constraint-checked rescheduling engine with human approval, built on FastAPI, SQLAlchemy and Docker.",
+    project: "adaptive-procurement",
+  },
+  {
+    when: "Sep 2026",
+    sort: "2026-09",
+    kind: "project",
+    title: "HouseKeepTrack — Java and Spring Boot",
+    detail: "A REST API learning project, extending my backend work beyond Python.",
+    project: "housekeeptrack",
+  },
+  {
+    when: "Oct 2026",
+    sort: "2026-10",
+    kind: "project",
+    title: "Q-Rescue — quantum-assisted ambulance dispatch",
+    detail: "Developed for Q-HACK INDIA 2026: QUBO/Ising formulation and Qiskit QAOA simulation, evaluated against classical and random baselines.",
+    project: "q-rescue",
+    highlight: true,
+  },
+  {
+    when: "Now",
+    sort: "2026-12",
+    kind: "role",
+    title: "Second year · Placement Coordinator",
+    detail: "CGPA 8.38 after Semester II. Coordinating placement-domain preferences and updates for students at Sri Eshwar College of Engineering.",
+  },
+];

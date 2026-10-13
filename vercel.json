@@ -1,1 +1,5 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [{ "source": "/((?!assets/|resume/|images/|og-image\\.png|favicon\\.svg).*)", "destination": "/index.html" }]
+}

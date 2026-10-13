@@ -3,10 +3,10 @@ import type { SiteConfig } from "../types/portfolio";
 export const site: SiteConfig = {
   name: "Gautham M A",
   shortName: "Gautham",
-  role: "AI/ML & Software Engineering Student",
-  headline: "Building intelligent systems for real-world problems.",
+  role: "B.E. CSE (AI & ML) · Sri Eshwar College of Engineering",
+  headline: "I build tested decision systems in Python — from traffic signals to ambulance dispatch.",
   subhead:
-    "Second-year CSE (AI & ML) student exploring applied AI, optimization and Python backend engineering — and turning ideas into tested prototypes.",
+    "Computer Science (AI & ML) undergraduate working on applied AI, optimization and backend engineering. Every project here shows what is built, how it was tested, and what is still planned.",
   education: "B.E. CSE (AI & ML), Sri Eshwar College of Engineering, Coimbatore · 2025–2029",
   email: "gautham.ma2025aiml@sece.ac.in",
   phone: "+91 82201 68505",
@@ -18,21 +18,22 @@ export const site: SiteConfig = {
     skillrack: "https://www.skillrack.com/profile/557623/e09efe94eaa03ef389f608626049181e10f08483",
   },
   resumePath: "/resume/Gautham_MA_Resume.pdf",
-  availability:
-    "Open to paid or unpaid internships in AI/ML, Python development and software engineering — remote, or on-site in India.",
+  /** Drop the photo at public/images/gautham.jpg — it appears in the hero only when the file exists. */
+  photo: { src: "/images/gautham.jpg", alt: "Portrait of Gautham M A" },
+  focus: ["Decision systems", "Python backends (FastAPI)", "Optimization & QUBO", "Applied computer vision"],
   codingStats: {
     verifiedOn: "2026-10-13",
     leetcode: "43 problems solved",
     skillrack: "831 programs solved · rank 38,389",
   },
   about: [
-    "I'm Gautham, a second-year Computer Science (AI & ML) student at Sri Eshwar College of Engineering. I like problems where a system has to make a decision under real constraints: a traffic signal choosing a phase, an ambulance dispatcher protecting future coverage, a procurement centre absorbing a sudden queue.",
-    "Most of my work so far is backend and decision logic — FastAPI services, orchestration layers, constraint-aware heuristics and QUBO formulations — backed by tests and honest notes on what is still unfinished.",
-    "I'm looking for an internship where I can work alongside experienced engineers, ship real code, and get better at the parts I'm still learning.",
+    "I'm Gautham, a Computer Science (AI & ML) undergraduate at Sri Eshwar College of Engineering, Coimbatore. I'm drawn to problems where a system has to make a decision under real constraints: a traffic signal choosing its next phase, an ambulance dispatcher protecting future coverage, a procurement centre absorbing a sudden queue.",
+    "Most of my work is the engine underneath — FastAPI services, orchestration layers, constraint-aware heuristics and QUBO formulations — backed by automated tests and an honest record of what is still unfinished.",
+    "I started with a first-year Flask project and have moved steadily towards larger systems with real architecture and test suites. The journey below traces that path.",
   ],
   seo: {
-    title: "Gautham M A — AI/ML & Software Engineering Student",
+    title: "Gautham M A — Decision Systems, Applied AI & Backend Engineering",
     description:
-      "Portfolio of Gautham M A, a second-year CSE (AI & ML) student building tested prototypes in applied AI, optimization and Python backend engineering.",
+      "Portfolio of Gautham M A, a CSE (AI & ML) undergraduate at Sri Eshwar College of Engineering building tested decision systems in Python: adaptive traffic control, quantum-assisted ambulance dispatch and procurement coordination.",
   },
 };

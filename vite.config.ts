@@ -1,19 +1,21 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { existsSync } from "node:fs";
-import { resolve } from "node:path";
-import { site } from "./src/data/site";
+import { readdirSync, statSync } from "node:fs";
+import { join, relative, resolve } from "node:path";
 
-// The resume button renders only when the PDF really exists in /public.
-// Drop the file at public/resume/Gautham_MA_Resume.pdf (or change
-// site.resumePath) and rebuild — no component edits needed.
-const resumeFile = resolve(__dirname, "public", site.resumePath.replace(/^\//, ""));
-const resumeAvailable = existsSync(resumeFile);
+// List every file in /public at build time. Images and the resume PDF render
+// only when their file is really there — drop a file in, rebuild, it appears.
+const publicDir = resolve(__dirname, "public");
+const walk = (dir: string): string[] =>
+  readdirSync(dir).flatMap((name) => {
+    const full = join(dir, name);
+    return statSync(full).isDirectory() ? walk(full) : ["/" + relative(publicDir, full).split("\\").join("/")];
+  });
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   define: {
-    __RESUME_AVAILABLE__: JSON.stringify(resumeAvailable),
+    __PUBLIC_FILES__: JSON.stringify(walk(publicDir)),
   },
 });

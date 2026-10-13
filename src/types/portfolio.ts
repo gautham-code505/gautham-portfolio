@@ -57,6 +57,8 @@ export interface Project {
   /** Honest limits, e.g. "No quantum advantage claimed". */
   limitations?: string[];
   status: ProjectStatus;
+  /** Qualifier shown after the status badge, e.g. "backend core". */
+  statusNote?: string;
   category: Category;
   visibility: Visibility;
   /** Lower comes first. */
@@ -103,7 +105,10 @@ export interface SiteConfig {
   };
   /** Public path. The download button renders only if this file exists at build time. */
   resumePath: string;
-  availability: string;
+  /** Optional portrait. Renders only when the file exists in /public. */
+  photo?: { src: string; alt: string };
+  /** Short focus tags shown in the hero. */
+  focus: string[];
   /** Coding-profile figures. Only shown with a verifiedOn date; update from the live profiles. */
   codingStats: { verifiedOn: string; leetcode: string; skillrack: string };
   about: string[];
@@ -125,6 +130,8 @@ export interface Achievement {
   detail: string;
   year?: number;
   relatedProject?: string;
+  /** Event photos or certificates. Each renders only when its file exists in /public. */
+  photos?: { src: string; alt: string; caption?: string }[];
 }
 
 export interface Experience {
@@ -144,4 +151,19 @@ export interface Certification {
   title: string;
   issuer: string;
   year: number;
+}
+
+export type JourneyKind = "education" | "project" | "achievement" | "certification" | "role";
+
+export interface JourneyEntry {
+  /** Display date, e.g. "Aug 2026" or "2024 – 2025". Use only dates that are verified. */
+  when: string;
+  /** Sort key: YYYY-MM. */
+  sort: string;
+  kind: JourneyKind;
+  title: string;
+  detail: string;
+  /** Slug of a public project, links to its case study or card. */
+  project?: string;
+  highlight?: boolean;
 }
