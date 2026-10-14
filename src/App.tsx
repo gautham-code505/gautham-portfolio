@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
+import { ScrollProgress } from "./components/ScrollProgress";
 import { Home } from "./pages/Home";
 import { CaseStudy } from "./pages/CaseStudy";
 import { NotFound } from "./pages/NotFound";
@@ -23,6 +24,7 @@ export default function App() {
   return (
     <>
       <ScrollManager />
+      <ScrollProgress />
       <Nav />
       <main id="main" tabIndex={-1} className="outline-none">
         <Routes>

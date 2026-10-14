@@ -1,4 +1,6 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { loadGsap, prefersReducedMotion } from "../lib/motion";
 import { journey } from "../data/journey";
 import { hasCaseStudy, projectBySlug } from "../lib/selectors";
 import type { JourneyKind } from "../types/portfolio";
@@ -29,11 +31,42 @@ const kindText: Record<JourneyKind, string> = {
 
 /** Vertical timeline grouped by year, oldest first. */
 export function Journey() {
+  const root = useRef<HTMLDivElement>(null);
+
+  // The cyan spine fills as each year block scrolls past, and each dot lights when reached.
+  useEffect(() => {
+    if (prefersReducedMotion() || !root.current) return;
+    let revert: (() => void) | undefined;
+    let cancelled = false;
+    loadGsap().then(({ gsap }) => {
+      if (cancelled || !root.current) return;
+      const ctx = gsap.context(() => {
+        gsap.utils.toArray<HTMLElement>("[data-spine-host]").forEach((host) => {
+          const line = host.querySelector<HTMLElement>("[data-spine]");
+          if (line) {
+            gsap.fromTo(line, { scaleY: 0 }, {
+              scaleY: 1, ease: "none",
+              scrollTrigger: { trigger: host, start: "top 65%", end: "bottom 55%", scrub: 0.4 },
+            });
+          }
+          host.querySelectorAll<HTMLElement>("[data-dot]").forEach((dot) => {
+            gsap.from(dot, {
+              scale: 0.2, opacity: 0.2, duration: 0.4, ease: "back.out(2)",
+              scrollTrigger: { trigger: dot, start: "top 70%", once: true },
+            });
+          });
+        });
+      }, root);
+      revert = () => ctx.revert();
+    });
+    return () => { cancelled = true; revert?.(); };
+  }, []);
+
   const entries = [...journey].sort((a, b) => a.sort.localeCompare(b.sort));
   const years = Array.from(new Set(entries.map((e) => (e.when === "Now" ? "Now" : e.sort.slice(0, 4)))));
 
   return (
-    <div className="relative">
+    <div ref={root} className="relative">
       {years.map((y) => {
         const items = entries.filter((e) => (e.when === "Now" ? "Now" : e.sort.slice(0, 4)) === y);
         return (
@@ -41,13 +74,15 @@ export function Journey() {
             <h3 className="font-mono text-sm text-muted sm:pt-0.5 sm:text-right">
               <span className="sticky top-24 inline-block">{y}</span>
             </h3>
-            <ol className="relative border-l border-border pb-10 pl-6 sm:pl-8">
+            <ol data-spine-host className="relative border-l border-border pb-10 pl-6 sm:pl-8">
+              <span data-spine aria-hidden="true" className="spine pointer-events-none absolute -left-px top-0 h-full w-px bg-accent" />
               {items.map((e) => {
                 const p = e.project ? projectBySlug(e.project) : undefined;
                 const href = p ? (hasCaseStudy(p) ? `/projects/${p.slug}` : `/#project-${p.slug}`) : undefined;
                 return (
                   <li key={e.title} className="relative pb-7 last:pb-0">
                     <span
+                      data-dot
                       className={`absolute -left-[calc(1.5rem+5px)] top-1.5 size-[9px] rounded-full sm:-left-[calc(2rem+5px)] ${kindDot[e.kind]} ${e.highlight ? "ring-4 ring-accent/15" : ""}`}
                       aria-hidden="true"
                     />

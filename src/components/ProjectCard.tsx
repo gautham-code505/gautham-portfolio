@@ -10,7 +10,12 @@ export function ProjectCard({ project: p, index }: { project: Project; index: nu
   return (
     <article
       aria-labelledby={headingId}
-      className="group flex flex-col rounded-card border border-border bg-surface transition-colors duration-150 hover:border-accent/60"
+      className="group spot flex flex-col rounded-card border border-border bg-surface transition-colors duration-150 hover:border-accent/60"
+      onPointerMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+      }}
     >
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-3">
         <span className="label text-muted">Project {String(index + 1).padStart(2, "0")}</span>
